@@ -1,1 +1,3 @@
-# 2022-winter-semester-tutoring
+# 2022 Winter Semester Tutoring
+## by Antonino Rossi
+## a.k.a. UnknownEquineCoder
