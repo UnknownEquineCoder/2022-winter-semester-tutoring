@@ -5,9 +5,6 @@ Make a function (Traditional Way)
 """
 
 
-import sys
-
-
 def square(x):
     return x * x
 
@@ -91,6 +88,11 @@ Force keyword arguments
 Use `*` in your function declarations to FORCE the arguments `after` it to be EXCLUSIVELY named.
 Specifying any of those arguments without their name will raise a TypeError.
 
+>>> keyword_only(1, 2) 
+TypeError: keyword_only() takes 0 positional arguments but 2 were given
+
+>>> keyword_only(x=1, y=2)
+1
 """
 
 
@@ -98,4 +100,22 @@ def keyword_only(*, x, y):
     return x ** y
 
 
-sys.stdout.write()
+"""
+Combine both syntaxes
+
+>>> some_positional_some_named(1, 2, z=3)
+2
+
+>>> some_positional_some_named(1, y=2, z=3)
+2
+
+>>> some_positional_some_named(x=1, y=2, z=3)
+TypeError: some_positional_some_named() got some positional-only arguments passed as keyword arguments: 'x'
+
+>>> some_positional_some_named(1, 2, 3)
+TypeError: missing keyword-only argument: 'z'
+"""
+
+
+def some_positional_some_named(x, /, y, *, z):
+    return x - y + z
