@@ -57,3 +57,24 @@ results = fizzbuzz(user_input)
 # Ex. 7 -> chug, 21 -> fizzchug, 35 -> buzzchug, 105 -> fizzbuzzchug
 
 print(results)
+
+def fizzbuzz_dictionary(max):
+    mapping = {
+        3: 'fizz',
+        5: 'buzz',
+        7: 'chug',
+    }
+
+    for i in range(1, max+1):
+        result = ''
+        for key, val in mapping.items():
+            if i % key == 0:
+                result += val
+
+        if result == '':
+            print(i)
+        else:
+            print(result)
+
+
+fizzbuzz_dictionary(105)
