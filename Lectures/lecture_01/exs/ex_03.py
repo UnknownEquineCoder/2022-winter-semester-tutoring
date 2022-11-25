@@ -18,7 +18,7 @@ Extend this exercise for arbitrary-length strings
 
 from string import ascii_letters
 
-terminator = 'END'
+terminator = "END"
 
 
 def is_valid_char(letter, length=1, letter_list=ascii_letters):
@@ -30,13 +30,13 @@ def is_valid_char(letter, length=1, letter_list=ascii_letters):
 
 
 def ask_for_char(terminator=terminator):
-    letter = input('>> ')
+    letter = input(">> ")
 
     # Verify whether the char is a single letter
     while not is_valid_char(letter):
         if letter == terminator:
             return None
-        letter = input('>> ')
+        letter = input(">> ")
 
     return letter
 
@@ -59,4 +59,4 @@ def move_to_back():
 
 if __name__ == "__main__":
     seq = move_to_back()
-    print(f'{seq=}')
+    print(f"{seq=}")
